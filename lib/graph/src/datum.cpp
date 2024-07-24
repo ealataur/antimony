@@ -376,6 +376,7 @@ std::pair<std::string, bool> Datum::trimSigil(std::string e)
 
 void Datum::setText(std::string s)
 {
+    if (s.empty()) { expr.clear(); return; }
     if (s != expr)
     {
         links = getLinks();
